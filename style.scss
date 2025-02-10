@@ -67,6 +67,16 @@ main {
       left: 0;
       background-image: linear-gradient(to right, #0e0e0e, transparent);
     }
+    &::before {
+      content: "";
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 99;
+      background-image: linear-gradient(to left, #0e0e0e, transparent);
+    }
 
     .text {
       display: flex;
@@ -111,8 +121,8 @@ main {
     }
   }
   .view-2 {
-    .marquee{
-        width: 50%;
+    .marquee {
+      width: 50%;
     }
   }
 }
