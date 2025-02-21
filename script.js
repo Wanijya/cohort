@@ -1,14 +1,12 @@
-/* Age Category Message - Ask the user for their age. If they are under 18, print "You are a minor". If they
- are between 18 and 60, print "You are an adult". If they are above 60, print "You are a senior citizen". */
+/* Even or Odd Sum - Take two numbers from the user using prompt(). If the sum of both numbers is even, print "Even Sum" otherwise print "Odd Sum". */
 
-let userAge = Number(prompt("Enter your age"));
+let num1 = Number(prompt("Enter a First Number"));
+let num2 = Number(prompt("Enter a Second Number"));
 
-if (userAge < 18) {
-  console.log("You are a Minor");
-} else if (userAge > 18 && userAge < 60) {
-  console.log("You are Adult");
-} else if (userAge > 60) {
-  console.log("You are a senior citizen");
+let sum = num1 + num2;
+
+if (sum % 2 === 0) {
+  console.log("Even Sum");
 } else {
-  console.log("Invalid age entered");
+  console.log("Odd Sum");
 }
