@@ -1,12 +1,16 @@
-/* Even or Odd Sum - Take two numbers from the user using prompt(). If the sum of both numbers is even, print "Even Sum" otherwise print "Odd Sum". */
-
-let num1 = Number(prompt("Enter a First Number"));
-let num2 = Number(prompt("Enter a Second Number"));
-
-let sum = num1 + num2;
-
-if (sum % 2 === 0) {
-  console.log("Even Sum");
-} else {
-  console.log("Odd Sum");
+function greet(elem) {
+  // elem jo hai Parameter hai
+  console.log(elem);
 }
+greet("heyy"); // "heyy" ye ek argument hai
+
+function abcd(a, b, c) {
+  console.log(a, b, c);
+}
+abcd(1, 2, 3);
+
+function xyz(a, b, c, d) {
+  console.log(a, b, c, d);
+}
+xyz(1, 2, 3); // d is undefined
+
