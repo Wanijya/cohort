@@ -1,19 +1,10 @@
-//--> 8. Check if "JavaScript" contains "Script" without using .includes().
-let str = "JavaScript";
-// console.log(str.includes("Script"));
+//--> 10. Explain the difference between undefined, null, and NaN with examples.
 
-if (str.indexOf("Script") === -1) {
-  console.log(false);
-} else {
-  console.log(true);
-}
+var a;
+console.log(a);
 
-console.log(str.indexOf("Script") !== -1);
+var a = null;
+console.log(a);
 
-if (str.search("Script") === -1) {
-  console.log(false);
-} else {
-  console.log(true);
-}
-
-console.log(str.search("Script") !== -1);
+var a = "Wanijya" / 2;
+console.log(a);
