@@ -1,8 +1,11 @@
-// 18. Sort an array in descending order.
+// 19. Reverse an array without using .reverse().
 
-let numbers = [5, 3, 8, 1, 9];
+let num = [1,23,4,5,7,8,10]
+let arr = [];
 
-let sortArr = numbers.sort(function (a, b) {
-  return b - a;
-});
-console.log(sortArr);
+for (let i = num.length - 1; i >= 0; i--) {
+  arr.push(num[i]);
+}
+
+console.log(arr);
+
