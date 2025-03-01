@@ -1,7 +1,6 @@
-// 15. Use a for...of loop to iterate over the string "JavaScript".
+// 16. Remove duplicate values from an array
 
-var str = "JavaScript";
+let arr = [1,2,1,3,4,6,3,2,5,5,12,13,12,9,1];
 
-for(let i of str){
-  console.log(i); // Output: J, a, v, a, S, c, r, i, P, t
-}
+let uniqueArr = [...new Set(arr)];
+console.log(uniqueArr);
