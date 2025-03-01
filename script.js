@@ -1,11 +1,8 @@
-// 19. Reverse an array without using .reverse().
+// 20. Find the most frequent element in an array.
 
-let num = [1,23,4,5,7,8,10]
-let arr = [];
+let arr = [3, 4, 1, 3, 4, 6, 7];
+let obj = {};
 
-for (let i = num.length - 1; i >= 0; i--) {
-  arr.push(num[i]);
-}
-
-console.log(arr);
-
+arr.forEach(function (val) {
+  obj[val] === undefined ? (obj[val] = 1) : obj[val]++;
+});
