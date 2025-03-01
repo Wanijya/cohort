@@ -1,11 +1,7 @@
-// 11. Write a for loop to print numbers from 10 to 1 in reverse.
+// 12. Use a while loop to print multiples of 3 from 3 to 30.
 
-for (var i = 10; i > 0; i--) {
-  console.log(i);
-}
-
-let val = 10;
-while (val > 0) {
+let val = 3;
+while (val <= 30) {
   console.log(val);
-  val--;
+  val += 3;
 }
