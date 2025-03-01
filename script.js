@@ -1,6 +1,7 @@
-// 13. Write a program to calculate the sum of numbers from 1 to 100 using a loop.
-var sum = 0;
-for (var i = 1; i <= 100; i++) {
-  sum = sum + i;
+// 15. Use a for...of loop to iterate over the string "JavaScript".
+
+var str = "JavaScript";
+
+for(let i of str){
+  console.log(i); // Output: J, a, v, a, S, c, r, i, P, t
 }
-console.log("The sum of all numbers is:", sum);
