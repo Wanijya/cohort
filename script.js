@@ -1,7 +1,6 @@
-// 12. Use a while loop to print multiples of 3 from 3 to 30.
-
-let val = 3;
-while (val <= 30) {
-  console.log(val);
-  val += 3;
+// 13. Write a program to calculate the sum of numbers from 1 to 100 using a loop.
+var sum = 0;
+for (var i = 1; i <= 100; i++) {
+  sum = sum + i;
 }
+console.log("The sum of all numbers is:", sum);
