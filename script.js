@@ -1,6 +1,13 @@
-// 16. Remove duplicate values from an array
+// 17. Find the second largest number in an array.
 
-let arr = [1,2,1,3,4,6,3,2,5,5,12,13,12,9,1];
+let arr = [1,5,9,3,4,7,2,1,6,13,67,12,4,9,21,13,21,5,55,58,55,58];
 
+// unique values
 let uniqueArr = [...new Set(arr)];
-console.log(uniqueArr);
+
+// sort in descending order
+let sortedArr = uniqueArr.sort(function (a,b){
+  return b-a;
+})
+
+console.log(sortedArr);
