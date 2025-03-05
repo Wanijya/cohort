@@ -1,8 +1,11 @@
-// 20. Find the most frequent element in an array.
+// Create a function that takes another function as an argument and calls it after 3 seconds (HOF + Callback).
 
-let arr = [3, 4, 1, 3, 4, 6, 7];
-let obj = {};
+function callerfnc(fn) {
+  setTimeout(fn, 3000);
+}
 
-arr.forEach(function (val) {
-  obj[val] === undefined ? (obj[val] = 1) : obj[val]++;
-});
+// callerfnc(function(){
+//   console.log("heyy");
+// })
+
+callerfnc(() => console.log("heyy after 3 seconds!!"));
