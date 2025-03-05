@@ -1,11 +1,15 @@
-// Create a function that takes another function as an argument and calls it after 3 seconds (HOF + Callback).
+// Implement your own version of `.map()` as a higher-order function.
 
-function callerfnc(fn) {
-  setTimeout(fn, 3000);
+var arr = [1, 2, 3, 4, 5];
+
+function myMap(arr, func) {
+  var newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(func(arr[i]));
+  }
+  return newArr;
 }
 
-// callerfnc(function(){
-//   console.log("heyy");
-// })
-
-callerfnc(() => console.log("heyy after 3 seconds!!"));
+var ans = myMap(arr, function (val) {
+  return val + 2;
+});
