@@ -1,15 +1,17 @@
-// Write a function that uses closures to create a counter.
+// Implement a function that limits how many times another function can be called (Closure + HOF).
 
-function counter() {
-  let count = 0;
+function fnlimiter(fn, limit) {
+  let totalCallback = 0;
   return function () {
-    count++;
-    console.log(count);
+    if (totalCallback < limit) {
+      totalCallback++;
+      fn();
+    }
   };
 }
-var fn = counter();
-fn();
-fn();
-fn();
-fn();
 
+var limiter = fnlimiter(() => console.log("heyy"), 3);
+limiter();
+limiter();
+limiter();
+limiter();
