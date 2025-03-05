@@ -6,6 +6,8 @@ function fnlimiter(fn, limit) {
     if (totalCallback < limit) {
       totalCallback++;
       fn();
+    }else{
+      console.error("limit reached");
     }
   };
 }
