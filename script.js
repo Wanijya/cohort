@@ -1,9 +1,14 @@
-// Create a function that takes a callback and executes it after every `n` seconds indefinitely.
+// Implement a function that returns a function with a preset greeting (Closure).
 
-function baarbaarchalao(fn, time) {
-  setInterval(fn, time);
+function greet(greeting){
+  return function(name) {
+    console.log(`${greeting} ${name}`);
+  }
 }
 
-baarbaarchalao(function () {
-  console.log("Hey there!");
-}, 2000);
+var greetingfun = greet("heloo");
+greetingfun("Wanijya");
+greetingfun("Amit");
+
+var spanishFun = greet("Hola");
+spanishFun("Wanijya");
