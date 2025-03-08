@@ -1,14 +1,21 @@
-// Implement a function that returns a function with a preset greeting (Closure).
+// Implement a function that takes a callback and only executes it once (HOF + Closure).
 
-function greet(greeting){
-  return function(name) {
-    console.log(`${greeting} ${name}`);
+function onlyOnceCaller(cb){
+  let excuted = false;
+  return function(){
+    if(!excuted){
+      excuted = true;
+      cb();
+    } else {
+      console.error("Only Executed Once");
+    }
   }
 }
 
-var greetingfun = greet("heloo");
-greetingfun("Wanijya");
-greetingfun("Amit");
+var newFun = onlyOnceCaller(function(){
+ console.log("ran");
+});
 
-var spanishFun = greet("Hola");
-spanishFun("Wanijya");
+newFun();
+newFun();
+newFun();
