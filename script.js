@@ -1,21 +1,18 @@
-// Implement a function that takes a callback and only executes it once (HOF + Closure).
+// Implement a function that throttles another function (HOF + Closures).
 
-function onlyOnceCaller(cb){
-  let excuted = false;
-  return function(){
-    if(!excuted){
-      excuted = true;
-      cb();
-    } else {
-      console.error("Only Executed Once");
+function throt(fn, delay) {
+  let lastCall = 0;
+  return function () {
+    let current = Date.now();
+    if (current - lastCall >= delay) {
+      lastCall = current;
+      fn();
     }
-  }
+  };
 }
 
-var newFun = onlyOnceCaller(function(){
- console.log("ran");
-});
+var newfunc = throt(function(){
+  console.log('will run in 2 seconds');
+}, 2000);
 
-newFun();
-newFun();
-newFun();
+newfunc();
