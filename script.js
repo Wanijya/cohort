@@ -1,19 +1,9 @@
-// Implement a function that limits how many times another function can be called (Closure + HOF).
+// Create a function that takes a callback and executes it after every `n` seconds indefinitely.
 
-function fnlimiter(fn, limit) {
-  let totalCallback = 0;
-  return function () {
-    if (totalCallback < limit) {
-      totalCallback++;
-      fn();
-    }else{
-      console.error("limit reached");
-    }
-  };
+function baarbaarchalao(fn, time) {
+  setInterval(fn, time);
 }
 
-var limiter = fnlimiter(() => console.log("heyy"), 3);
-limiter();
-limiter();
-limiter();
-limiter();
+baarbaarchalao(function () {
+  console.log("Hey there!");
+}, 2000);
