@@ -1,6 +1,10 @@
-// WAP to calculate Circumference of circle
-// CF = 2πR;
+// WAP to accept the two numbers and print the greatest between them.
 
-let radius = Number(prompt("Circumference of Circle"));
+let num1 = Number(prompt("Enter the first number: "));
+let num2 = Number(prompt("Enter the second number: "));
 
-console.log(2 * Math.PI * radius); // (property) Math.PI: number
+if (num1 > num2) {
+  console.log(`${num1} is greater than ${num2}`);
+} else {
+  console.log(`${num2} is greater than ${num1}`);
+}
