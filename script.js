@@ -1,18 +1,9 @@
-// Implement a function that throttles another function (HOF + Closures).
+// WAP to find CI
 
-function throt(fn, delay) {
-  let lastCall = 0;
-  return function () {
-    let current = Date.now();
-    if (current - lastCall >= delay) {
-      lastCall = current;
-      fn();
-    }
-  };
-}
+let p = Number(prompt("Enter Principle"));
+let r = Number(prompt("Enter a rate"));
+let t = Number(prompt("Enter a time"));
 
-var newfunc = throt(function(){
-  console.log('will run in 2 seconds');
-}, 2000);
-
-newfunc();
+// A = P * (1 + r/100)^t
+// CI = A - P
+console.log((p * Math.pow(1 + r / 100, t)) - p);
