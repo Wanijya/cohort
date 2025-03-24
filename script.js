@@ -1,10 +1,9 @@
-// WAP to accept the two numbers and print the greatest between them.
+// WAP to accept an int and check whether it is an even or odd number.
 
-let num1 = Number(prompt("Enter the first number: "));
-let num2 = Number(prompt("Enter the second number: "));
+let num = Number(prompt("Enter a number: "));
 
-if (num1 > num2) {
-  console.log(`${num1} is greater than ${num2}`);
+if (num % 2 == 0) {
+  console.log(`${num} is an even number.`);
 } else {
-  console.log(`${num2} is greater than ${num1}`);
+  console.log(`${num} is an odd number.`);
 }
