@@ -1,12 +1,17 @@
-// WAP accept name and age from the user. Check if the user is valid voter or not.
+// WAP to check the year is leap year or not.
 
-let age = Number(prompt("Enter a age:"));
-let username = prompt("Enter your name:");
+let year = Number(prompt("Enter a year: "));
 
-if (age >= 18) {
-  console.log(`Hello ${username}, you are eligible to vote.`);
-} else if (age < 18) {
-  console.log(`Hello ${username}, you are not eligible to vote.`);
+if (year % 4 == 0) {
+  if (year % 100 == 0) {
+    if (year % 400 == 0) {
+      console.log("Leap year");
+    } else {
+      console.log("Not a leap year");
+    }
+  } else {
+    console.log("Leap year");
+  }
 } else {
-  console.log("Invalid input");
+  console.log("Not a leap year");
 }
