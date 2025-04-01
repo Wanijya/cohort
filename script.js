@@ -1,8 +1,15 @@
-let year = Number(prompt("Enter a year: "));
-let isLeapYear = false;
+// Shop Discount on Graphic
 
-if (year % 4 == 0 && year % 100 != 0) {
-    console.log("leap year");
-} else if (year % 400 == 0) {
-    console.log("leap year");
-} else console.log("not a leap year");
+let amount = Number(prompt("Enter the amount of your purchase: "));
+
+if (amount >= 0 && amount <= 5000) {
+  console.log(amount);
+} else if (amount > 5000 && amount <= 7000) {
+  console.log(amount - (5 * amount) / 100);
+} else if (amount > 7000 && amount <= 9000) {
+    console.log(amount - (10 * amount) / 100);
+} else if (amount > 9000){
+    console.log(amount - (20 * amount) / 100);
+} else {
+    console.log("Invalid amount.");
+}
