@@ -1,18 +1,19 @@
-// Shop Discount on Graphic
+var btn = document.querySelector('button');
+var body = document.querySelector("body");
 
-let amount = Number(prompt("Enter the amount of your purchase: "));
-let discount = 0;
+btn.addEventListener('click', function(){
 
-if (amount >= 0 && amount <= 5000) {
-  discount = 0;
-} else if (amount > 5000 && amount <= 7000) {
-  discount = 5;
-} else if (amount > 7000 && amount <= 9000) {
-  discount = 10;
-} else if (amount > 9000) {
-  discount = 20;
-} else {
-  console.log("Invalid amount.");
-}
+    var x = Math.random()*100;
+    var y = Math.random()*100;
+    
+    
 
-console.log(amount - (discount * amount) / 100);
+    var img = document.createElement('img');
+    img.setAttribute('src','./Chhota-Bheem-PNG.png');
+    img.style.height = '100px';
+    img.style.position = 'absolute';
+    img.style.left = x+'%';
+    img.style.top = y+'%';
+
+    body.appendChild(img);
+})
