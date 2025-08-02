@@ -13,11 +13,14 @@ const Create = () => {
   const SubmitHandler = (recipe) => {
     recipe.id = nanoid();
     // console.log(recipe);
-    // const copydata = [...data];
-    // copydata.push(recipe);
-    // setdata(copydata);
+    const copydata = [...data];
+    copydata.push(recipe);
+    setdata(copydata);
 
-    setdata([...data, recipe]);
+    // Save to localStorage
+    localStorage.setItem("recipes", JSON.stringify(copydata));
+
+    // setdata([...data, recipe]);
     toast.success("Recipe added successfully!");
     reset(); // Reset the form after submission
     navigate("/recipes");
@@ -45,18 +48,19 @@ const Create = () => {
       />
 
       <textarea
-        className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white" 
+        className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
         {...register("description")}
         placeholder="//start from here"
       ></textarea>
 
-      <textarea className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white" 
+      <textarea
+        className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
         {...register("ingridients")}
         placeholder="//write ingridients, separate by comma"
       ></textarea>
 
       <textarea
-        className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white" 
+        className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"
         {...register("instructions")}
         placeholder="//write instructions, separate by comma"
       ></textarea>
