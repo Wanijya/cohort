@@ -1,9 +1,21 @@
-import React from 'react'
+import { useEffect } from "react";
+import axios from "./api/axiosConfig";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  const getProduct = async () => {
+    try {
+      const response = await axios.get("/products");
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching product:", error);
+    }
+  };
 
-export default App
+  useEffect(() => {
+    getProduct();
+  }, []);
+
+  return <div></div>;
+};
+
+export default App;
