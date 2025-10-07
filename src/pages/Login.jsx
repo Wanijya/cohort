@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { asyncloginuser } from "../store/actions/userActions";
 import { useDispatch } from "react-redux";
 
@@ -8,10 +8,12 @@ const Login = () => {
   const { register, reset, handleSubmit } = useForm();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const LoginHandler = (user) => {
-    console.log(user);
+    // console.log(user);
     dispatch(asyncloginuser(user));
+    navigate("/");
   };
 
   return (

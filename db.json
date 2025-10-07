@@ -8,16 +8,9 @@
       "isAdmin": true
     },
     {
-      "id": "B_GAUgmZGmaQ1l9IS1MvG",
-      "username": "wani",
+      "id": "wFHTkF77e3Ufu99cS1UMk",
+      "username": "wani.ai",
       "email": "wani@wan.com",
-      "password": "123456",
-      "isAdmin": false
-    },
-    {
-      "id": "lNgkEljWRbp-pZmNNR5Ex",
-      "username": "aaru",
-      "email": "aaru@gmail.com",
       "password": "123456",
       "isAdmin": false
     }
