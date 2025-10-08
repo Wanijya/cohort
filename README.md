@@ -1,12 +1,21 @@
-# React + Vite
+## Pagination
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- npm install --save react-infinite-scroll-component
 
-Currently, two official plugins are available:
+## Lazy Loading
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- use of lazy
+- use of suspense
 
-## Expanding the ESLint configuration
+### Lazy Loading use
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> 2 way to implimant Lazy Loading
+
+- You are lazy Loading a component
+- You are lazy loading a data
+
+### Suspense and Fallback
+
+If data is come then show otherwise loading show.
+
+- Agr aake project ko open hone me time lg rha hai to suspense kaam krta hai and suspense ke andar hota hai fallback.

@@ -8,6 +8,7 @@ export const asyncloginuser = (user) => async (dispatch, getState) => {
     );
     // console.log(data[0]);
     localStorage.setItem("user", JSON.stringify(data[0]));
+    dispatch(asynccurrentuser());
   } catch (error) {
     console.log(error);
   }
