@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import UserProfile from "../pages/user/UserProfile";
 import PageNotFound from "../pages/PageNotFound";
 import AuthWrapper from "./AuthWrapper";
+import Cart from "../pages/Cart";
 
 const Mainroutes = () => {
   // console.log(users);
@@ -39,6 +40,15 @@ const Mainroutes = () => {
         path="/product/:id"
         element={
             <ProductDetails />
+        }
+      />
+
+      <Route
+        path="/cart"
+        element={
+          <AuthWrapper>
+            <Cart />
+          </AuthWrapper>
         }
       />
 

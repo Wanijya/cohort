@@ -1,9 +1,28 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { asyncupdateuser } from "../store/actions/userActions";
 
 const Products = () => {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.userReducer.users);
   const products = useSelector((state) => state.productReducer.products);
+
+  const AddtoCartHandler = (product) => {
+    const copyuser = { ...users, cart: [...users.cart] }; // Deep Copy
+    const x = copyuser.cart.findIndex((c) => c.product.id == product.id);
+    // console.log(x);
+    if (x == -1) {
+      copyuser.cart.push({ product, quantity: 1 });
+    } else {
+      copyuser.cart[x] = {
+        product,
+        quantity: copyuser.cart[x].quantity + 1,
+      };
+      console.log(copyuser.cart[x].quantity + 1);
+    }
+    // console.log(copyuser);
+    dispatch(asyncupdateuser(copyuser.id, copyuser));
+  };
 
   if (!products || products.length === 0) {
     return (
@@ -41,7 +60,10 @@ const Products = () => {
               <p className="text-lg font-bold text-gray-900">
                 ₹{product.price}
               </p>
-              <button className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md text-sm font-medium transition">
+              <button
+                onClick={() => AddtoCartHandler(product)}
+                className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-md text-sm font-medium transition"
+              >
                 Add to Cart
               </button>
             </div>

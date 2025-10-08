@@ -5,14 +5,16 @@
       "username": "admin",
       "email": "admin@ad.com",
       "password": "123456",
-      "isAdmin": true
+      "isAdmin": true,
+      "cart": []
     },
     {
       "id": "wFHTkF77e3Ufu99cS1UMk",
       "username": "wani.ai",
       "email": "wani@wan.com",
       "password": "123456",
-      "isAdmin": false
+      "isAdmin": false,
+      "cart": []
     }
   ],
   "products": [
@@ -23,6 +25,14 @@
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
       "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "kOvfPI5LP-3MQHWNU1H_E",
+      "image": "https://images.unsplash.com/photo-1738724350709-af0c40ef3e39?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "title": "Product 1",
+      "price": "100",
+      "description": "this it the new product",
+      "category": "shopping"
     }
   ],
   "carts": []
