@@ -1,28 +1,36 @@
-import { useEffect } from "react";
-import Nav from "./components/Nav";
-import Mainroutes from "./routes/Mainroutes";
-import { asynccurrentuser } from "./store/actions/userActions";
-import { useDispatch, useSelector } from "react-redux";
-// import { asyncloadproduct } from "./store/actions/productActions";
+import { useMemo, useState } from "react";
+import { set } from "react-hook-form";
 
 const App = () => {
-  const dispatch = useDispatch();
+  const [add, setadd] = useState(0);
+  const [sub, setsub] = useState(99);
 
-  const { users } = useSelector((state) => state.userReducer);
-  // const { products } = useSelector((state) => state.productReducer);
-
-  useEffect(() => {
-    !users && dispatch(asynccurrentuser());
-  }, [users]);
-
-  // useEffect(() => {
-  //   products.length == 0 && dispatch(asyncloadproduct());
-  // }, [products]);
+  const Product = useMemo(() => {
+    console.log("product function called");
+    return add * 2;
+  }, [add]);
 
   return (
-    <div className="text-white font-thin w-screen bg-gray-900 px-[10%]">
-      <Nav />
-      <Mainroutes />
+    <div className="bg-gray-800 h-screen w-screen text-white font-thin py-10 px-10">
+      <h1 className="text-6xl mb-5">{Product}</h1>
+      <div className="">
+        <button
+          onClick={() => setadd(add + 1)}
+          className=" p-2 rounded bg-blue-400 text-5xl text-center font-black"
+        >
+          +
+        </button>
+        <span className="text-5xl ml-5 font-black">{add}</span>
+        <br />
+        <br />
+        <button
+          onClick={() => setsub(sub - 1)}
+          className=" p-2 rounded bg-red-400 text-5xl text-center font-black"
+        >
+          -
+        </button>
+        <span className="text-5xl ml-5 font-black">{sub}</span>
+      </div>
     </div>
   );
 };

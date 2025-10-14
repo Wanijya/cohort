@@ -1,21 +1,4 @@
-## Pagination
+## Use memo
+- useMemo is a React hook that stores the result of a function and only recalculates it when its dependencies change, helping to make the app faster.
 
-- npm install --save react-infinite-scroll-component
-
-## Lazy Loading
-
-- use of lazy
-- use of suspense
-
-### Lazy Loading use
-
-> 2 way to implimant Lazy Loading
-
-- You are lazy Loading a component
-- You are lazy loading a data
-
-### Suspense and Fallback
-
-If data is come then show otherwise loading show.
-
-- Agr aake project ko open hone me time lg rha hai to suspense kaam krta hai and suspense ke andar hota hai fallback.
+## useCallback
