@@ -1,36 +1,31 @@
-import { useMemo, useState } from "react";
-import { set } from "react-hook-form";
+import { useCallback, useState } from "react";
+import Recipe from "./Recipe";
 
 const App = () => {
   const [add, setadd] = useState(0);
   const [sub, setsub] = useState(99);
 
-  const Product = useMemo(() => {
-    console.log("product function called");
-    return add * 2;
-  }, [add]);
+  const ingridients = useCallback(() => {
+    console.log("helloooo");
+  }, [sub]);
 
   return (
     <div className="bg-gray-800 h-screen w-screen text-white font-thin py-10 px-10">
-      <h1 className="text-6xl mb-5">{Product}</h1>
-      <div className="">
-        <button
-          onClick={() => setadd(add + 1)}
-          className=" p-2 rounded bg-blue-400 text-5xl text-center font-black"
-        >
-          +
-        </button>
-        <span className="text-5xl ml-5 font-black">{add}</span>
-        <br />
-        <br />
-        <button
-          onClick={() => setsub(sub - 1)}
-          className=" p-2 rounded bg-red-400 text-5xl text-center font-black"
-        >
-          -
-        </button>
-        <span className="text-5xl ml-5 font-black">{sub}</span>
-      </div>
+      <button
+        onClick={() => setadd(add + 1)}
+        className="mr-10 p-2 rounded bg-blue-400 text-5xl text-center font-black"
+      >
+        {add}
+      </button>
+      <button
+        onClick={() => setsub(sub - 1)}
+        className=" p-2 rounded bg-red-400 text-5xl text-center font-black"
+      >
+        {sub}
+      </button>
+      <br />
+      <br />
+      <Recipe ing={ingridients} />
     </div>
   );
 };
