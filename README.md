@@ -5,3 +5,6 @@
 ## useCallback
 
 - useCallback is a React hook that remembers a function so it doesn’t get recreated every time the component re-renders, unless its dependencies change.
+
+## useRef
+- like a document.querySelcetor
