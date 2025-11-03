@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+body {
+  background: #000;
+}
+
+h6 {
+  color: white;
+  font-size: 5vw;
+}
