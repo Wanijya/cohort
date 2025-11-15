@@ -1,10 +1,18 @@
-const http = require("http");
+const express = require("express");
 
+const app = express(); // es line par server create ho jata hai.
 
-const server = http.createServer((req, res) => {
-    res.end("Hello, World from the server!");
+app.get("/home", (req, res) => {
+  // es line par ham server ko program kar rahe hain ki jab koi /home URL par jaye to kya response dena hai.
+  res.send("Welcome to the Home Page");
 });
 
-server.listen(4000, () => {
-    console.log("Server is listening on port 4000");
-})
+app.get("/about", (req, res) => {
+  // es line par ham server ko program kar rahe hain ki jab koi /about URL par jaye to kya response dena hai.
+  res.send("This is the About Page");
+});
+
+app.listen(3000, () => {
+  // es line par server ko listen (start) karaya jata hai.
+  console.log("Server is running on port 3000");
+});
