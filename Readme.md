@@ -1,62 +1,110 @@
 
-### 🗓️ Day - 3: REST APIs and HTTP Methods
+### 🗓️ Day - 4: Mini Notes Project Using Express
 
 ---
 
-## 🌐 What are REST APIs?
-- **REST (Representational State Transfer)** is a **type of API** that follows **specific rules and guidelines** for communication.
-- It uses **HTTP methods** like:
-  - `GET`
-  - `POST`
-  - `PUT`
-  - `DELETE`
-- It defines **fixed standards** for how requests and responses should be structured.
+## 🏗️ Project Overview: Notes API
+A **very mini project** to understand basic REST API operations using Express.
+
+### 🔧 Features:
+- ✅ Create a note
+- 📄 Show all notes
+- ❌ Delete a note
+- ✏️ Update a note
 
 ---
 
-## 📨 Ways to Send Data in Requests
-
-### 1. `req.body`
-- Hidden in the request payload.
-- Best for **larger**, **sensitive**, or **complex** data (like passwords).
-- Typically used in `POST`, `PUT`, and `PATCH` requests.
-
-### 2. `req.query`
-- Data sent in the URL after `?` as key-value pairs.
-- Ideal for **small**, **optional parameters**.
-- Avoid using it for **sensitive or complex data**.
-- Example:
-  ```
-  GET /search?gender=male&age=24
-  ```
-
-### 3. `req.params`
-- Data sent as part of the API path.
-- Commonly used for identifying **specific resources**.
-- Example: 
-  ```
-  GET /user/ankur_bit_io
-  ```
-- Accessed in code as:
-  ```js
-  req.params.username
-  ```
+## 🧠 Technologies Used:
+- Node.js
+- Express.js
 
 ---
 
-## 🧾 REST API Methods
-
-| Method   | Purpose                                      |
-|----------|----------------------------------------------|
-| **GET**     | Retrieve data from the server.               |
-| **POST**    | Send new data to the server (create).        |
-| **PATCH**   | Update existing data on the server.          |
-| **DELETE**  | Remove/delete data from the server.          |
+## 📦 Install Express
+```bash
+npm install express
+```
 
 ---
 
-💡 Example Use Case:  
-A social media app like `x.com` may use:
-- `req.params` to fetch user profiles (`/user/:username`)
-- `req.query` to filter search results (`/search?gender=male`)
-- `req.body` for login forms or post creation
+## 🧱 Full Source Code
+
+```js
+const express = require('express');
+const app = express(); 
+
+app.use(express.json());
+
+let notes = [];
+
+// Root route
+app.get('/', (req, res) => {
+    res.send('Hello, Cohort!');
+});
+
+/* 
+POST /notes => { title, content } 
+Create a new note
+*/
+app.post('/notes', (req, res) => {
+    console.log(req.body);  
+    notes.push(req.body);
+    res.json({
+        message: "note created successfully",
+    });
+});
+
+/* 
+GET /notes 
+Show all notes
+*/
+app.get('/notes', (req, res) => {
+    res.json(notes);
+});
+
+/* 
+DELETE /notes/:index 
+Delete a note at given index
+*/
+app.delete('/notes/:index', (req, res) => {
+    const index = req.params.index;
+    delete notes[index];
+    res.json({
+        message: "note deleted successfully",
+    });
+});
+
+/* 
+PATCH /notes/:index => { title } 
+Update a note title at given index
+*/
+app.patch("/notes/:index", (req, res) => {
+    const index = req.params.index;
+    const { title } = req.body;
+    notes[index].title = title;
+    res.json({
+        message: "note updated successfully",
+    });
+});
+
+// Start server
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+```
+
+---
+
+## ✅ How It Works
+
+| Method | Route            | Purpose                  |
+|--------|------------------|--------------------------|
+| GET    | `/`              | Welcome message          |
+| POST   | `/notes`         | Add a new note           |
+| GET    | `/notes`         | List all notes           |
+| DELETE | `/notes/:index`  | Delete a note by index   |
+| PATCH  | `/notes/:index`  | Update title of a note   |
+
+---
+
+🔄 Try sending requests using [Postman](https://www.postman.com/) or [Thunder Client](https://www.thunderclient.com/) for testing the APIs.
