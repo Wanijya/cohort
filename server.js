@@ -1,18 +1,20 @@
 const express = require("express");
 
-const app = express(); // es line par server create ho jata hai.
+const app = express();
 
-app.get("/home", (req, res) => {
-  // es line par ham server ko program kar rahe hain ki jab koi /home URL par jaye to kya response dena hai.
-  res.send("Welcome to the Home Page");
-});
+app.use(express.json()); // Middleware to parse JSON bodies
 
-app.get("/about", (req, res) => {
-  // es line par ham server ko program kar rahe hain ki jab koi /about URL par jaye to kya response dena hai.
-  res.send("This is the About Page");
+let notes = [];
+
+app.post("/notes", (req, res) => {
+  console.log(req.body);
+  notes.push(req.body);
+  res.json({
+    message: "Note added successfully",
+    notes: notes,
+  });
 });
 
 app.listen(3000, () => {
-  // es line par server ko listen (start) karaya jata hai.
   console.log("Server is running on port 3000");
 });
