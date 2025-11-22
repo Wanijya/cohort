@@ -4,10 +4,10 @@ function connectDB() {
   mongoose
     .connect(process.env.MONGODB_URL)
     .then(() => {
-      console.log("Database connected successfully");
+      console.log("Connected to MongoDB");
     })
     .catch((err) => {
-      console.error("Database connection error:", err);
+      console.error("Error connecting to MongoDB:", err);
     });
 }
 
