@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Wanijya/cohort#readme",
   "dependencies": {
+    "@google/genai": "^1.34.0",
     "@modelcontextprotocol/sdk": "^1.25.1",
+    "dotenv": "^17.2.3",
     "zod": "^4.2.1"
   }
 }

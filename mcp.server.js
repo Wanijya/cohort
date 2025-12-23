@@ -14,10 +14,10 @@ server.registerTool(
   {
     title: "Add Two Numbers",
     description: "Adds two numbers together and returns the result.",
-    inputSchema: z.object({
+    inputSchema: {
       a: z.number().describe("The first number"),
       b: z.number().describe("The second number"),
-    }),
+    },
   },
   async ({ a, b }) => {
     return {
