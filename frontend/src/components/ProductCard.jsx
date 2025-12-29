@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProductCard.css";
+import PaymentButton from "./PaymentButton";
 
 export default function ProductCard({ product, onBuy }) {
   const { description, image, price } = product || {};
@@ -18,12 +19,7 @@ export default function ProductCard({ product, onBuy }) {
           {currency} {amount.toLocaleString()}
         </p>
         <div className="pcard-actions">
-          <button
-            className="pcard-btn pcard-buy"
-            onClick={() => onBuy && onBuy(product)}
-          >
-            Buy Now
-          </button>
+          <PaymentButton />
           <button className="pcard-btn pcard-add">Add to Cart</button>
         </div>
       </div>
